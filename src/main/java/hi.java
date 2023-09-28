@@ -1,4 +1,3 @@
-public class hi {
-    int i = 0;
+public class hi{
     
 }
