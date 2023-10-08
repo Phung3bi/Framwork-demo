@@ -1,0 +1,134 @@
+2023-10-05 00:52:14 INFO  HomeSteps:25 -  ==== Toi mo demoqa tren trinh duyet ==== 
+2023-10-05 00:59:41 INFO  HomeSteps:25 -  ==== Toi mo demoqa tren trinh duyet ==== 
+2023-10-05 01:01:10 INFO  HomeSteps:25 -  ==== Toi mo demoqa tren trinh duyet ==== 
+2023-10-05 01:04:00 INFO  HomeSteps:25 -  ==== Toi mo demoqa tren trinh duyet ==== 
+2023-10-05 01:06:58 INFO  HomeSteps:25 -  ==== Toi mo demoqa tren trinh duyet ==== 
+2023-10-05 01:07:24 INFO  HomeSteps:25 -  ==== Toi mo demoqa tren trinh duyet ==== 
+2023-10-05 01:07:32 INFO  HomeSteps:25 -  ==== Toi mo demoqa tren trinh duyet ==== 
+2023-10-05 01:07:52 INFO  HomeSteps:25 -  ==== Toi mo demoqa tren trinh duyet ==== 
+2023-10-05 01:08:18 INFO  HomeSteps:25 -  ==== Toi mo demoqa tren trinh duyet ==== 
+2023-10-05 01:08:28 INFO  HomeSteps:25 -  ==== Toi mo demoqa tren trinh duyet ==== 
+2023-10-05 12:30:21 INFO  HomeSteps:25 -  ==== Toi mo demoqa tren trinh duyet ==== 
+2023-10-05 15:00:13 INFO  HomeSteps:25 -  ==== Toi mo demoqa tren trinh duyet ==== 
+2023-10-05 15:06:16 INFO  HomeSteps:25 -  ==== Toi mo demoqa tren trinh duyet ==== 
+2023-10-05 15:09:20 INFO  HomeSteps:25 -  ==== Toi mo demoqa tren trinh duyet ==== 
+2023-10-05 15:09:20 INFO  HomePage:19 - test1
+2023-10-05 15:10:48 INFO  HomeSteps:25 -  ==== Toi mo demoqa tren trinh duyet ==== 
+2023-10-05 15:10:48 INFO  HomePage:19 - test1
+2023-10-05 15:11:41 INFO  HomeSteps:25 -  ==== Toi mo demoqa tren trinh duyet ==== 
+2023-10-05 15:11:41 INFO  HomePage:19 - test1
+2023-10-05 15:42:16 INFO  HomeSteps:25 -  ==== Toi mo demoqa tren trinh duyet ==== 
+2023-10-05 15:42:16 INFO  HomePage:19 - test1
+2023-10-05 15:52:46 INFO  HomeSteps:25 -  ==== Toi mo demoqa tren trinh duyet ==== 
+2023-10-05 15:52:46 INFO  HomePage:19 - test1
+2023-10-05 15:59:00 INFO  Hooks:66 -  === This will run before the scenario === 
+2023-10-05 15:59:00 INFO  Hooks:105 -  === This will run after the scenario === 
+2023-10-05 16:06:34 INFO  Hooks:66 -  === This will run before the scenario === 
+2023-10-05 16:06:34 INFO  Hooks:105 -  === This will run after the scenario === 
+2023-10-05 16:09:43 INFO  Hooks:66 -  === This will run before the scenario === 
+2023-10-05 16:09:43 INFO  Hooks:105 -  === This will run after the scenario === 
+2023-10-05 16:10:44 INFO  Hooks:66 -  === This will run before the scenario === 
+2023-10-05 16:10:44 INFO  Hooks:105 -  === This will run after the scenario === 
+2023-10-05 16:16:31 INFO  Hooks:66 -  === This will run before the scenario === 
+2023-10-05 16:16:31 INFO  Hooks:105 -  === This will run after the scenario === 
+2023-10-05 16:17:06 INFO  Hooks:66 -  === This will run before the scenario === 
+2023-10-05 16:17:27 INFO  Hooks:105 -  === This will run after the scenario === 
+2023-10-05 16:27:18 INFO  Hooks:66 -  === This will run before the scenario === 
+2023-10-05 16:27:25 INFO  Hooks:105 -  === This will run after the scenario === 
+2023-10-05 17:31:27 INFO  Hooks:66 -  === This will run before the scenario === 
+2023-10-05 17:31:27 INFO  Hooks:105 -  === This will run after the scenario === 
+2023-10-05 17:36:16 INFO  Hooks:66 -  === This will run before the scenario === 
+2023-10-05 17:36:37 INFO  Hooks:105 -  === This will run after the scenario === 
+2023-10-05 17:36:54 INFO  Hooks:66 -  === This will run before the scenario === 
+2023-10-05 17:43:03 INFO  Hooks:66 -  === This will run before the scenario === 
+2023-10-05 17:43:03 INFO  Hooks:105 -  === This will run after the scenario === 
+2023-10-05 22:12:50 INFO  Hooks:66 -  === This will run before the scenario === 
+2023-10-05 22:12:50 INFO  Hooks:105 -  === This will run after the scenario === 
+2023-10-05 22:13:42 INFO  Hooks:66 -  === This will run before the scenario === 
+2023-10-05 22:13:42 INFO  Hooks:105 -  === This will run after the scenario === 
+2023-10-05 22:14:30 INFO  Hooks:66 -  === This will run before the scenario === 
+2023-10-05 22:14:30 INFO  Hooks:105 -  === This will run after the scenario === 
+2023-10-06 14:23:28 INFO  Hooks:66 -  === This will run before the scenario === 
+2023-10-06 14:23:42 INFO  Hooks:105 -  === This will run after the scenario === 
+2023-10-06 15:00:11 INFO  Hooks:66 -  === This will run before the scenario === 
+2023-10-06 15:00:13 INFO  HomeSteps:25 -  ==== Toi mo demoqa tren trinh duyet ==== 
+2023-10-06 15:00:13 INFO  HomePage:19 - test1
+2023-10-06 15:00:21 INFO  HomeSteps:30 -  ==== Toi Vao Menu ==== 
+2023-10-06 15:01:55 INFO  Hooks:105 -  === This will run after the scenario === 
+2023-10-06 15:01:55 ERROR Hooks:132 - no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.61)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Phung3bis-MacBook-Pro.local', ip: 'fe80:0:0:0:75:67f9:1b26:19ad%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '11.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.61, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: /var/folders/qv/p3dmjbjn3nb...}, goog:chromeOptions: {debuggerAddress: localhost:58645}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 4a41b020bb476cbd14727c2e6fddcddb
+2023-10-06 15:01:56 INFO  Hooks:239 - ------------- The browser is already opened -------------
+2023-10-06 15:01:56 INFO  Hooks:255 - ------------- Closed the browser -------------
+2023-10-06 15:14:07 INFO  Hooks:66 -  === This will run before the scenario === 
+2023-10-06 15:14:07 INFO  Hooks:105 -  === This will run after the scenario === 
+2023-10-06 15:17:16 INFO  Hooks:66 -  === This will run before the scenario === 
+2023-10-06 15:17:16 INFO  Hooks:105 -  === This will run after the scenario === 
+2023-10-06 15:18:07 INFO  Hooks:66 -  === This will run before the scenario === 
+2023-10-06 15:18:12 INFO  HomeSteps:25 -  ==== Toi mo demoqa tren trinh duyet ==== 
+2023-10-06 15:18:12 INFO  HomePage:19 - test1
+2023-10-06 15:18:17 INFO  HomeSteps:30 -  ==== Toi Vao Menu ==== 
+2023-10-06 15:19:51 INFO  Hooks:105 -  === This will run after the scenario === 
+2023-10-06 15:19:51 ERROR Hooks:132 - no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.61)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Phung3bis-MacBook-Pro.local', ip: 'fe80:0:0:0:75:67f9:1b26:19ad%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '11.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.61, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: /var/folders/qv/p3dmjbjn3nb...}, goog:chromeOptions: {debuggerAddress: localhost:58981}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: dcb6544ac68349898e25fc8f19c8981f
+2023-10-06 15:19:52 INFO  Hooks:257 - ------------- The browser is already opened -------------
+2023-10-06 15:19:52 INFO  Hooks:273 - ------------- Closed the browser -------------
+2023-10-06 15:20:52 INFO  Hooks:66 -  === This will run before the scenario === 
+2023-10-06 15:20:52 INFO  Hooks:105 -  === This will run after the scenario === 
+2023-10-06 15:21:46 INFO  Hooks:66 -  === This will run before the scenario === 
+2023-10-06 15:21:46 INFO  Hooks:105 -  === This will run after the scenario === 
+2023-10-06 15:22:24 INFO  Hooks:66 -  === This will run before the scenario === 
+2023-10-06 15:22:30 INFO  HomeSteps:25 -  ==== Toi mo demoqa tren trinh duyet ==== 
+2023-10-06 15:22:30 INFO  HomePage:19 - test1
+2023-10-06 15:22:35 INFO  HomeSteps:30 -  ==== Toi Vao Menu ==== 
+2023-10-06 15:24:08 INFO  Hooks:105 -  === This will run after the scenario === 
+2023-10-06 15:24:08 ERROR Hooks:132 - no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.61)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Phung3bis-MacBook-Pro.local', ip: 'fe80:0:0:0:75:67f9:1b26:19ad%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '11.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.61, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: /var/folders/qv/p3dmjbjn3nb...}, goog:chromeOptions: {debuggerAddress: localhost:59066}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 9d4dc4fc7eb09c6e859a3e2cba28c6a9
+2023-10-06 15:24:09 INFO  Hooks:257 - ------------- The browser is already opened -------------
+2023-10-06 15:24:09 INFO  Hooks:273 - ------------- Closed the browser -------------
+2023-10-06 16:22:07 INFO  Hooks:66 -  === This will run before the scenario === 
+2023-10-06 16:23:54 INFO  Hooks:105 -  === This will run after the scenario === 
+2023-10-06 16:25:42 INFO  Hooks:66 -  === This will run before the scenario === 
+2023-10-06 16:26:48 INFO  Hooks:105 -  === This will run after the scenario === 
+2023-10-06 16:27:08 INFO  Hooks:66 -  === This will run before the scenario === 
+2023-10-06 16:27:34 INFO  HomeSteps:25 -  ==== Toi mo demoqa tren trinh duyet ==== 
+2023-10-06 16:27:34 INFO  HomePage:19 - test1
+2023-10-06 16:27:56 INFO  HomeSteps:30 -  ==== Toi Vao Menu ==== 
+2023-10-06 16:29:00 INFO  Hooks:105 -  === This will run after the scenario === 
+2023-10-06 16:30:22 INFO  Hooks:258 - ------------- The browser is already opened -------------
+2023-10-06 16:30:22 INFO  Hooks:274 - ------------- Closed the browser -------------
+2023-10-07 16:16:43 INFO  Hooks:66 -  === This will run before the scenario === 
+2023-10-07 16:17:12 INFO  Hooks:105 -  === This will run after the scenario === 
+2023-10-07 16:32:15 INFO  Hooks:66 -  === This will run before the scenario === 
+2023-10-07 16:32:15 INFO  Hooks:105 -  === This will run after the scenario === 
+2023-10-07 16:45:18 INFO  Hooks:66 -  === This will run before the scenario === 
+2023-10-07 16:45:24 INFO  HomeSteps:25 -  ==== Toi mo demoqa tren trinh duyet ==== 
+2023-10-07 16:45:24 INFO  HomePage:19 - test1
+2023-10-07 16:45:31 INFO  HomeSteps:30 -  ==== Toi Vao Menu ==== 
+2023-10-07 16:47:05 INFO  Hooks:105 -  === This will run after the scenario === 
+2023-10-07 16:47:05 ERROR Hooks:132 - no such window: window was already closed
+  (Session info: chrome=98.0.4758.102)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: '192.168.0.107', ip: 'fe80:0:0:0:1c50:8933:24be:8e1%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '11.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 98.0.4758.102 (273bf7ac8c90..., userDataDir: /var/folders/qv/p3dmjbjn3nb...}, goog:chromeOptions: {debuggerAddress: localhost:53852}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: af810705ba0186ae9821fd589b4b62eb
+2023-10-07 16:47:05 INFO  Hooks:258 - ------------- The browser is already opened -------------
+2023-10-07 16:47:05 INFO  Hooks:274 - ------------- Closed the browser -------------

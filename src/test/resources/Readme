@@ -1,0 +1,32 @@
+1. adb shell
+2. dumpsys window windows | grep -E 'mCurrentFocus'
+3. dumpsys package | grep -i "app" | grep Activity
+4. -ea
+   -Dcucumber.options="src/test/java/features --tags'@smoketest'"
+   -Dapp="web"
+
+=============UPDATE===============================
+1. RUN CMD:
+-ea -Dcucumber.options="src/test/java/features --tags'@AUTO-44'" -Dmode="web" -Denvironment="beta"
+
+ - mode: web/mobile/api
+ - environment: staging/beta
+
+2. update version chromedriver theo browser => improve sau.
+
+===========AMS SMOKE TEST=========================
+-ea
+-Dcucumber.options="src/test/java/features --tags'@AUTO-13SM or @AUTO-17SM or @AUTO-16SM or @AUTO-8SM or @AUTO-18SM or @AUTO-6SM1 or @AUTO-6SM2 or @AUTO-2SM or @AUTO-9SM or @AUTO-67SM or @AUTO-38SM or @AUTO-4SM or @AUTO-10SM or @AUTO-11SM or @AUTO-52SM or @AUTO-68SM or @AUTO-77SM or @AUTO-81SM or @AUTO-26SM or @AUTO-82SM or @AUTO-71SM or @AUTO-96'"
+-Dmode="chrome"
+-Denvironment="staging"
+
+===========HMS SMOKE TEST==========================
+-ea
+-Dcucumber.options="src/test/java/features --tags'@AUTO-42SM or @AUTO-49SM or @AUTO-62SM or @AUTO-43SM or @AUTO-44SM or @AUTO-53SM or @AUTO-54SM or @AUTO-72SM or @AUTO-60SM or @AUTO-61SM or @AUTO-63SM or @AUTO-64SM or @AUTO-66SM1 or @AUTO-66SM2 or @AUTO-70SM or @AUTO-28SM1 or @AUTO-28SM2 or @AUTO-28SM3 or @AUTO-95SM or @AUTO-80SM'"
+-Dmode="web"
+-Denvironment="beta"
+
+===========CONVENTION==============================
+1. Ten feature:
+[Ten du an][Phan he][Chuc nang cua flow]
+[TMS][Phong ve] Them moi, sua và xoa nguoi dung

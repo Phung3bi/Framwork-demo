@@ -1,0 +1,1036 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.5">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments">You can run me using: jmeter -Jthreads=&lt;Number of threads&gt; -Jrampup=&lt;rampup in seconds&gt; -Jduration=&lt;duration in seconds&gt; -Jiterations=&lt;Number of iterations, -1 means infinite&gt; -e -o &lt;report output folder&gt;</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="AMS - Material" enabled="true">
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration">900</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="name" elementType="Argument">
+              <stringProp name="Argument.name">name</stringProp>
+              <stringProp name="Argument.value">${__time(ddMMyyyy)}_${__Random(00000,99990)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="captcha" elementType="Argument">
+              <stringProp name="Argument.name">captcha</stringProp>
+              <stringProp name="Argument.value">+U#c58m9&amp;TY!vwuC75jbyC-EUK?3Z%eW</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="authority" elementType="Header">
+              <stringProp name="Header.name">authority</stringProp>
+              <stringProp name="Header.value">api.stg.hulk.cloudhms.io</stringProp>
+            </elementProp>
+            <elementProp name="accept" elementType="Header">
+              <stringProp name="Header.name">accept</stringProp>
+              <stringProp name="Header.value">application/json</stringProp>
+            </elementProp>
+            <elementProp name="accept-language" elementType="Header">
+              <stringProp name="Header.name">accept-language</stringProp>
+              <stringProp name="Header.value">en,ja;q=0.9,fr;q=0.8,zh;q=0.7,vi;q=0.6</stringProp>
+            </elementProp>
+            <elementProp name="authorization" elementType="Header">
+              <stringProp name="Header.name">authorization</stringProp>
+              <stringProp name="Header.value">Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkQ3MzU5QzcwMjA0QTlGNTgzOEE4RkYzRDBDQUVFQjIzRTZGMTIxNzZSUzI1NiIsInR5cCI6ImF0K2p3dCIsIng1dCI6IjF6V2NjQ0JLbjFnNHFQODlESzdySS1ieElYWSJ9.eyJuYmYiOjE2Njc5ODk5NDEsImV4cCI6MTY2ODAxODc0MSwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5zdGcuaHVsay5jbG91ZGhtcy5pbyIsImF1ZCI6WyJ0ZXN0LWFwaSIsInJlc291cmNlLWFwaS1hcHMiLCJyZXNvdXJjZS1hcGktYW1zIiwicmVzb3VyY2UtYXBpLXBtcyJdLCJjbGllbnRfaWQiOiJzcGEtY2xpZW50Iiwic3ViIjoiMThlNTBmOGEtZWI5Mi00OTQ0LTgzN2EtNjdkODQ2ZTZkYzg4IiwiYXV0aF90aW1lIjoxNjY3OTg4OTIxLCJpZHAiOiJsb2NhbCIsInVzZXJuYW1lIjoidHJhbmtoaWVtMDEiLCJuYW1lIjoia2hpZW0wMSIsImVtYWlsIjoidi5raGllbXRjQGNsb3VkaG1zLm5ldCIsInBob25lX251bWJlciI6IiIsInByb2ZpbGVpZCI6IjEwYWZmZjMyLTVhZGYtNGZlZS1iYTJkLThjZjY0YzdmNjdmOSIsInByb2ZpbGVfdHlwZSI6IlVzZXIiLCJpc19yb290X2FkbWluIjoiZmFsc2UiLCJvcmdhbml6YXRpb24iOiJ2aW5ncm91cCIsImFwcGxpY2F0aW9ucyI6WyJjaWFtcy1zdGFmZi1hcHAiLCJjaWhtcy1wb3J0YWwtZGFzaGJvYXJkIiwibW9iaWxlLXBvcnRhbC1hdXgtbGF1bmRyeSIsIm1vYmlsZS1wb3J0YWwtY2lhbXMiLCJtb2JpbGUtcG9ydGFsLWZyb250LW9mZmljZSIsIm1vYmlsZS1wb3J0YWwtaG91c2Uta2VlcGluZyIsIm1vYmlsZS1wb3J0YWwtaW5zcGVjdGlvbiIsIm1vYmlsZS1wb3J0YWwtcGNtIiwibW9iaWxlLXBvcnRhbC10YXNrLW1hbmFnZW1lbnQiLCJwb3J0YWwtYW1zIiwicG9ydGFsLWFtcy1pbnRlZ3JhdGlvbiIsInBvcnRhbC1hcHMtc21jIiwicG9ydGFsLWNvbnRhY3QiLCJwb3J0YWwtY3BzIiwicG9ydGFsLWRhc2hib2FyZCIsInBvcnRhbC1lbmVyZ3ktbWFuYWdlbWVudCIsInBvcnRhbC1mYXVsdC1tYW5hZ2VtZW50IiwicG9ydGFsLWludmVudG9yeSIsInBvcnRhbC1tYWludGVuYW5jZSIsInBvcnRhbC1zaGlmdC1tYW5hZ2VtZW50IiwicG9ydGFsLXN5c3RlbSIsInBvcnRhbC10YXNrLW1hbmFnZW1lbnQiXSwic2lkIjoiNzA3Njk4RkY2MDhFRDAwQTlFQkRFRjBBQzc1MTREMEEiLCJpYXQiOjE2Njc5ODk5NDEsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwgb2ZmbGluZV9hY2Nlc3MiLCJhbXIiOlsicHdkIl19.e-UfDLewsaRBfpjLvlX_U4zDen7of6xHueXCtZsBPjkCw-BVeLzWTFVQggBP8OZLCn7sn9qco-TseGDtnnRiec9bNoIxZAj7EkwfSbHPj0XUQSjW8DRMPrxRvqZO_x15vxqpyq8AdFHZ4lSPY-DBfHRf_WE9f0DnYC0Oxz6oa8Qso-3gbVrFQyx6bCOmpN6y6ELV9gbthPE4QqPj7LRGQHmjHOX6H4DhqYq1aQCzTDxAEiqQQ-xCJqCRMsX5PugMOhjcL7htw_xGZPdhtNKWMpo3-nNrBCfSH-hRXd5xoUxOin0Xn9xN-m1cPstRXMUImQhcPrWs8NEAWcrZCzvFQg</stringProp>
+            </elementProp>
+            <elementProp name="content-type" elementType="Header">
+              <stringProp name="Header.name">content-type</stringProp>
+              <stringProp name="Header.value">application/json</stringProp>
+            </elementProp>
+            <elementProp name="origin" elementType="Header">
+              <stringProp name="Header.name">origin</stringProp>
+              <stringProp name="Header.value">https://vingroup.portal.stg.hulk.cloudhms.io</stringProp>
+            </elementProp>
+            <elementProp name="referer" elementType="Header">
+              <stringProp name="Header.name">referer</stringProp>
+              <stringProp name="Header.value">https://vingroup.portal.stg.hulk.cloudhms.io/</stringProp>
+            </elementProp>
+            <elementProp name="sec-ch-ua" elementType="Header">
+              <stringProp name="Header.name">sec-ch-ua</stringProp>
+              <stringProp name="Header.value">&quot;.Not/A)Brand&quot;;v=&quot;99&quot;, &quot;Google Chrome&quot;;v=&quot;103&quot;, &quot;Chromium&quot;;v=&quot;103&quot;</stringProp>
+            </elementProp>
+            <elementProp name="sec-ch-ua-mobile" elementType="Header">
+              <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+              <stringProp name="Header.value">?0</stringProp>
+            </elementProp>
+            <elementProp name="sec-ch-ua-platform" elementType="Header">
+              <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+              <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+            </elementProp>
+            <elementProp name="sec-fetch-dest" elementType="Header">
+              <stringProp name="Header.name">sec-fetch-dest</stringProp>
+              <stringProp name="Header.value">empty</stringProp>
+            </elementProp>
+            <elementProp name="sec-fetch-mode" elementType="Header">
+              <stringProp name="Header.name">sec-fetch-mode</stringProp>
+              <stringProp name="Header.value">cors</stringProp>
+            </elementProp>
+            <elementProp name="sec-fetch-site" elementType="Header">
+              <stringProp name="Header.name">sec-fetch-site</stringProp>
+              <stringProp name="Header.value">same-site</stringProp>
+            </elementProp>
+            <elementProp name="user-agent" elementType="Header">
+              <stringProp name="Header.name">user-agent</stringProp>
+              <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36</stringProp>
+            </elementProp>
+            <elementProp name="x-organization" elementType="Header">
+              <stringProp name="Header.name">x-organization</stringProp>
+              <stringProp name="Header.value">vingroup</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="01. POST create asset" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;name&quot;: &quot;Tai san ngay ${name}&quot;,&#xd;
+    &quot;description&quot;: &quot;Mo ta tai san jmeter&quot;,&#xd;
+    &quot;assetCategoryId&quot;: &quot;c0001879-20b3-4c4e-b814-2e35041a67a4&quot;,&#xd;
+    &quot;depreciationStatus&quot;: &quot;Draft&quot;,&#xd;
+    &quot;functionalLocationId&quot;: &quot;bf8d4ea8-6619-41f8-9716-ed1c2da40f7d&quot;,&#xd;
+    &quot;quantity&quot;: 10,&#xd;
+    &quot;unitCode&quot;: &quot;c9700d78-438e-4eba-81d5-2488a1d86c72&quot;,&#xd;
+    &quot;isLabelling&quot;: true,&#xd;
+    &quot;isInventoryCheck&quot;: true,&#xd;
+    &quot;isEquipment&quot;: false,&#xd;
+    &quot;companyId&quot;: &quot;d1e4102a-9ca2-40bb-ae19-5ee2353dc7d5&quot;,&#xd;
+    &quot;currency&quot;: &quot;VND&quot;,&#xd;
+    &quot;unitCost&quot;: 1000,&#xd;
+    &quot;costCenterId&quot;: &quot;0c187712-ff65-4df7-bcce-689e794f888f&quot;,&#xd;
+    &quot;evaluationGroup1Id&quot;: &quot;51d55384-a411-4b79-b64d-47874ea2d5e0&quot;,&#xd;
+    &quot;evaluationGroup2Id&quot;: &quot;eca66bba-e85c-4069-ba5d-1ec71dbb5de2&quot;,&#xd;
+    &quot;evaluationGroup3Id&quot;: &quot;b677bba5-be55-4104-958f-b30c0b07e57c&quot;,&#xd;
+    &quot;evaluationGroup4Id&quot;: &quot;0ab5bcad-3091-4036-9ca6-9313279d195c&quot;,&#xd;
+    &quot;evaluationGroup5Id&quot;: &quot;f26cfe6c-11d4-403e-aec2-120ec08106cc&quot;,&#xd;
+    &quot;assetSapIntegration&quot;: &quot;NoSyncSap&quot;,&#xd;
+    &quot;attributes&quot;: [],&#xd;
+    &quot;attachments&quot;: [],&#xd;
+    &quot;assetType&quot;: &quot;Asset&quot;,&#xd;
+    &quot;equipmentStatuses&quot;: [&#xd;
+        {&#xd;
+            &quot;__data__&quot;: {},&#xd;
+            &quot;assetEquipmentStatusDetailCode&quot;: &quot;Standby&quot;,&#xd;
+            &quot;equipmentStatusId&quot;: &quot;cfc80363-a225-4303-8da6-62cb4fb4908e&quot;,&#xd;
+            &quot;equipmentStatusName&quot;: &quot;C1&quot;,&#xd;
+            &quot;quantity&quot;: 5,&#xd;
+            &quot;assetStatusId&quot;: &quot;b6ace75b-bdbc-476e-8ae8-a2c714e4433a&quot;,&#xd;
+            &quot;documents&quot;: []&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;__data__&quot;: {},&#xd;
+            &quot;assetEquipmentStatusDetailCode&quot;: &quot;Offline&quot;,&#xd;
+            &quot;equipmentStatusId&quot;: &quot;38915954-cac8-48f8-8f68-b8b76cd044a0&quot;,&#xd;
+            &quot;equipmentStatusName&quot;: &quot;C2&quot;,&#xd;
+            &quot;quantity&quot;: 5,&#xd;
+            &quot;assetStatusId&quot;: &quot;b6ace75b-bdbc-476e-8ae8-a2c714e4433a&quot;,&#xd;
+            &quot;documents&quot;: []&#xd;
+        }&#xd;
+    ],&#xd;
+    &quot;requestInfo&quot;: {&#xd;
+        &quot;organization&quot;: &quot;vingroup&quot;,&#xd;
+        &quot;languageCode&quot;: &quot;vi&quot;,&#xd;
+        &quot;propertyId&quot;: &quot;6f2b8e93-d9f9-4c75-9c75-09b157bd254d&quot;,&#xd;
+        &quot;pnLId&quot;: &quot;162997fe-9757-4eae-94ba-5df708250a86&quot;,&#xd;
+        &quot;serviceCode&quot;: &quot;portal-ams&quot;,&#xd;
+        &quot;reCaptchaToken&quot;: &quot;+U#c58m9&amp;TY!vwuC75jbyC-EUK?3Z%eW&quot;&#xd;
+    }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">api.stg.hulk.cloudhms.io</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/service-ams/asset</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="assetCode" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">assetCode</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;code&quot;:&quot;(.+?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">not found</stringProp>
+            <stringProp name="RegexExtractor.match_number">0</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="assetId" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">assetId</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;id&quot;:&quot;(.+?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">not found</stringProp>
+            <stringProp name="RegexExtractor.match_number">0</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="02. POST create asset with sap" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;name&quot;: &quot;Tai san sap ngay ${name}&quot;,&#xd;
+    &quot;description&quot;: &quot;Mo ta&quot;,&#xd;
+    &quot;assetCategoryId&quot;: &quot;160fe412-7c8c-4245-8b65-2f7d3f199bd9&quot;,&#xd;
+    &quot;depreciationStatus&quot;: &quot;Draft&quot;,&#xd;
+    &quot;functionalLocationId&quot;: &quot;bf8d4ea8-6619-41f8-9716-ed1c2da40f7d&quot;,&#xd;
+    &quot;quantity&quot;: 0,&#xd;
+    &quot;unitCode&quot;: &quot;c9700d78-438e-4eba-81d5-2488a1d86c72&quot;,&#xd;
+    &quot;isLabelling&quot;: true,&#xd;
+    &quot;isInventoryCheck&quot;: true,&#xd;
+    &quot;isEquipment&quot;: false,&#xd;
+    &quot;companyId&quot;: &quot;d1e4102a-9ca2-40bb-ae19-5ee2353dc7d5&quot;,&#xd;
+    &quot;currency&quot;: &quot;VND&quot;,&#xd;
+    &quot;unitCost&quot;: 0,&#xd;
+    &quot;costCenterId&quot;: &quot;1456abb6-316e-41ce-bc02-068ef01cd680&quot;,&#xd;
+    &quot;evaluationGroup1Id&quot;: &quot;51d55384-a411-4b79-b64d-47874ea2d5e0&quot;,&#xd;
+    &quot;evaluationGroup2Id&quot;: &quot;eb52609c-e06b-4c1b-8266-6f70620dc400&quot;,&#xd;
+    &quot;evaluationGroup3Id&quot;: &quot;2e76c11e-83e9-4e5d-80f7-c469f45a5239&quot;,&#xd;
+    &quot;evaluationGroup4Id&quot;: &quot;ed48c033-e096-4729-84fd-95df5642f3c1&quot;,&#xd;
+    &quot;evaluationGroup5Id&quot;: &quot;a170d427-3143-4059-9270-ae470b4bfbe1&quot;,&#xd;
+    &quot;assetClassId&quot;: &quot;67225bda-592d-499b-9277-f6e4bc5eef3c&quot;,&#xd;
+    &quot;assetSapIntegration&quot;: &quot;SyncValueAndQuantity&quot;,&#xd;
+    &quot;attributes&quot;: [],&#xd;
+    &quot;attachments&quot;: [],&#xd;
+    &quot;assetType&quot;: &quot;Asset&quot;,&#xd;
+    &quot;equipmentStatuses&quot;: [],&#xd;
+    &quot;siteId&quot;: &quot;2f3ab61f-c3b6-49c9-ace4-da9493b7a050&quot;,&#xd;
+    &quot;fundsCenterId&quot;: &quot;565cd2ac-8788-42d1-8fa7-cec62595c7e9&quot;,&#xd;
+    &quot;profitCenterId&quot;: &quot;efc34f00-5fae-4d76-9112-83038aea0c46&quot;,&#xd;
+    &quot;requestInfo&quot;: {&#xd;
+        &quot;organization&quot;: &quot;vingroup&quot;,&#xd;
+        &quot;languageCode&quot;: &quot;vi&quot;,&#xd;
+        &quot;propertyId&quot;: &quot;6f2b8e93-d9f9-4c75-9c75-09b157bd254d&quot;,&#xd;
+        &quot;pnLId&quot;: &quot;162997fe-9757-4eae-94ba-5df708250a86&quot;,&#xd;
+        &quot;serviceCode&quot;: &quot;portal-ams&quot;,&#xd;
+        &quot;reCaptchaToken&quot;: &quot;+U#c58m9&amp;TY!vwuC75jbyC-EUK?3Z%eW&quot;&#xd;
+    }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">api.stg.hulk.cloudhms.io</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/service-ams/asset</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="03. POST maintenance-work-order" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;requestInfo&quot;: {&#xd;
+        &quot;organization&quot;: &quot;vingroup&quot;,&#xd;
+        &quot;languageCode&quot;: &quot;vi&quot;,&#xd;
+        &quot;propertyId&quot;: &quot;6f2b8e93-d9f9-4c75-9c75-09b157bd254d&quot;,&#xd;
+        &quot;pnLId&quot;: &quot;162997fe-9757-4eae-94ba-5df708250a86&quot;,&#xd;
+        &quot;serviceCode&quot;: &quot;portal-maintenance&quot;,&#xd;
+        &quot;reCaptchaToken&quot;: &quot;${captcha}&quot;&#xd;
+    },&#xd;
+    &quot;__data__&quot;: {&#xd;
+        &quot;assigneeId&quot;: &quot;1036dafa-5d0c-4c34-9f74-05ea990164c7&quot;,&#xd;
+        &quot;reporterId&quot;: &quot;1036dafa-5d0c-4c34-9f74-05ea990164c7&quot;,&#xd;
+        &quot;user&quot;: {&#xd;
+            &quot;s_hash&quot;: &quot;OPJSD_iWkYxYpEuG1QPrYQ&quot;,&#xd;
+            &quot;sid&quot;: &quot;13AAF6B9DF54601C494D028EDF597126&quot;,&#xd;
+            &quot;sub&quot;: &quot;26bd617a-65bb-480c-bd09-f88c80d33210&quot;,&#xd;
+            &quot;auth_time&quot;: 1660184574,&#xd;
+            &quot;idp&quot;: &quot;local&quot;,&#xd;
+            &quot;amr&quot;: [&#xd;
+                &quot;pwd&quot;&#xd;
+            ],&#xd;
+            &quot;username&quot;: &quot;nguyenvu01&quot;,&#xd;
+            &quot;name&quot;: &quot;Nguyễn Vũ 01&quot;,&#xd;
+            &quot;given_name&quot;: &quot;&quot;,&#xd;
+            &quot;family_name&quot;: &quot;&quot;,&#xd;
+            &quot;preferred_username&quot;: &quot;&quot;,&#xd;
+            &quot;email&quot;: &quot;nguyenvu01@yopmail.com&quot;,&#xd;
+            &quot;profileid&quot;: &quot;1036dafa-5d0c-4c34-9f74-05ea990164c7&quot;,&#xd;
+            &quot;is_root_admin&quot;: &quot;false&quot;,&#xd;
+            &quot;organization&quot;: &quot;vingroup&quot;,&#xd;
+            &quot;applications&quot;: [&#xd;
+                &quot;mobile-portal-front-office&quot;,&#xd;
+                &quot;portal-ams&quot;,&#xd;
+                &quot;portal-maintenance&quot;,&#xd;
+                &quot;portal-ams-integration&quot;,&#xd;
+                &quot;portal-dashboard&quot;,&#xd;
+                &quot;cihms-portal-dashboard&quot;,&#xd;
+                &quot;portal-fault-management&quot;,&#xd;
+                &quot;portal-shift-management&quot;,&#xd;
+                &quot;portal-contact&quot;,&#xd;
+                &quot;portal-energy-management&quot;,&#xd;
+                &quot;mobile-portal-house-keeping&quot;,&#xd;
+                &quot;mobile-portal-task-management&quot;,&#xd;
+                &quot;mobile-portal-aux-laundry&quot;,&#xd;
+                &quot;portal-task-management&quot;,&#xd;
+                &quot;mobile-portal-ciams&quot;,&#xd;
+                &quot;portal-system&quot;,&#xd;
+                &quot;mobile-portal-inspection&quot;,&#xd;
+                &quot;portal-aps-smc&quot;,&#xd;
+                &quot;mobile-portal-pcm&quot;,&#xd;
+                &quot;portal-cps&quot;&#xd;
+            ]&#xd;
+        },&#xd;
+        &quot;assetId&quot;: &quot;${assetId}&quot;,&#xd;
+        &quot;functionLocationId&quot;: &quot;bf8d4ea8-6619-41f8-9716-ed1c2da40f7d&quot;,&#xd;
+        &quot;assetEquipmentStatuses&quot;: [&#xd;
+            {&#xd;
+                &quot;__data__&quot;: {&#xd;
+                    &quot;equipmentStatusId&quot;: &quot;cfc80363-a225-4303-8da6-62cb4fb4908e&quot;,&#xd;
+                    &quot;equipmentStatusName&quot;: &quot;C1&quot;,&#xd;
+                    &quot;quantity&quot;: 5,&#xd;
+                    &quot;equipmentStatusDetailCode&quot;: &quot;Standby&quot;,&#xd;
+                    &quot;assetStatusId&quot;: &quot;b6ace75b-bdbc-476e-8ae8-a2c714e4433a&quot;,&#xd;
+                    &quot;assetStatusName&quot;: &quot;Chua su dung&quot;&#xd;
+                },&#xd;
+                &quot;equipmentStatusId&quot;: &quot;cfc80363-a225-4303-8da6-62cb4fb4908e&quot;,&#xd;
+                &quot;equipmentStatusName&quot;: &quot;C1&quot;,&#xd;
+                &quot;quantity&quot;: 2,&#xd;
+                &quot;equipmentStatusDetailCode&quot;: &quot;Standby&quot;,&#xd;
+                &quot;assetStatusId&quot;: &quot;b6ace75b-bdbc-476e-8ae8-a2c714e4433a&quot;,&#xd;
+                &quot;assetStatusName&quot;: &quot;Chua su dung&quot;,&#xd;
+                &quot;allowQuantity&quot;: 5,&#xd;
+                &quot;transformToItems&quot;: []&#xd;
+            },&#xd;
+            {&#xd;
+                &quot;__data__&quot;: {&#xd;
+                    &quot;equipmentStatusId&quot;: &quot;38915954-cac8-48f8-8f68-b8b76cd044a0&quot;,&#xd;
+                    &quot;equipmentStatusName&quot;: &quot;C2&quot;,&#xd;
+                    &quot;quantity&quot;: 5,&#xd;
+                    &quot;equipmentStatusDetailCode&quot;: &quot;Offline&quot;,&#xd;
+                    &quot;assetStatusId&quot;: &quot;b6ace75b-bdbc-476e-8ae8-a2c714e4433a&quot;,&#xd;
+                    &quot;assetStatusName&quot;: &quot;Chua su dung&quot;&#xd;
+                },&#xd;
+                &quot;equipmentStatusId&quot;: &quot;38915954-cac8-48f8-8f68-b8b76cd044a0&quot;,&#xd;
+                &quot;equipmentStatusName&quot;: &quot;C2&quot;,&#xd;
+                &quot;quantity&quot;: 2,&#xd;
+                &quot;equipmentStatusDetailCode&quot;: &quot;Offline&quot;,&#xd;
+                &quot;assetStatusId&quot;: &quot;b6ace75b-bdbc-476e-8ae8-a2c714e4433a&quot;,&#xd;
+                &quot;assetStatusName&quot;: &quot;Chua su dung&quot;,&#xd;
+                &quot;allowQuantity&quot;: 5,&#xd;
+                &quot;transformToItems&quot;: []&#xd;
+            }&#xd;
+        ],&#xd;
+        &quot;checkListTemplateId&quot;: &quot;2cdd3eaf-4ad7-461e-b71c-ce9c29222768&quot;,&#xd;
+        &quot;name&quot;: &quot;DANH MUC CONG VIEC 1&quot;,&#xd;
+        &quot;priorityId&quot;: &quot;df9e70ea-7f01-4d60-b60a-fddb12a1faa9&quot;,&#xd;
+        &quot;orderTypeId&quot;: &quot;3f4cc46f-664d-478e-b89c-c41880822eb8&quot;,&#xd;
+        &quot;workCenterId&quot;: &quot;e8b4df9b-9f9b-4255-814a-f6644ecab9cf&quot;,&#xd;
+        &quot;assetCode&quot;: &quot;${assetCode}&quot;,&#xd;
+        &quot;assetName&quot;: &quot;Tai san ngay ${tenTaiSan}&quot;,&#xd;
+        &quot;dueDate&quot;: &quot;2025-10-31T02:43:06.595Z&quot;,&#xd;
+        &quot;startDate&quot;: &quot;${__time(yyyy/MM/dd HH:mm:ss.SSS&apos;Z&apos;)}&quot;,&#xd;
+        &quot;description&quot;: &quot;Mo ta&quot;&#xd;
+    },&#xd;
+    &quot;assigneeId&quot;: &quot;1036dafa-5d0c-4c34-9f74-05ea990164c7&quot;,&#xd;
+    &quot;reporterId&quot;: &quot;1036dafa-5d0c-4c34-9f74-05ea990164c7&quot;,&#xd;
+    &quot;user&quot;: {&#xd;
+        &quot;s_hash&quot;: &quot;OPJSD_iWkYxYpEuG1QPrYQ&quot;,&#xd;
+        &quot;sid&quot;: &quot;13AAF6B9DF54601C494D028EDF597126&quot;,&#xd;
+        &quot;sub&quot;: &quot;26bd617a-65bb-480c-bd09-f88c80d33210&quot;,&#xd;
+        &quot;auth_time&quot;: 1660184574,&#xd;
+        &quot;idp&quot;: &quot;local&quot;,&#xd;
+        &quot;amr&quot;: [&#xd;
+            &quot;pwd&quot;&#xd;
+        ],&#xd;
+        &quot;username&quot;: &quot;nguyenvu01&quot;,&#xd;
+        &quot;name&quot;: &quot;Nguyễn Vũ 01&quot;,&#xd;
+        &quot;given_name&quot;: &quot;&quot;,&#xd;
+        &quot;family_name&quot;: &quot;&quot;,&#xd;
+        &quot;preferred_username&quot;: &quot;&quot;,&#xd;
+        &quot;email&quot;: &quot;nguyenvu01@yopmail.com&quot;,&#xd;
+        &quot;profileid&quot;: &quot;1036dafa-5d0c-4c34-9f74-05ea990164c7&quot;,&#xd;
+        &quot;is_root_admin&quot;: &quot;false&quot;,&#xd;
+        &quot;organization&quot;: &quot;vingroup&quot;,&#xd;
+        &quot;applications&quot;: [&#xd;
+            &quot;mobile-portal-front-office&quot;,&#xd;
+            &quot;portal-ams&quot;,&#xd;
+            &quot;portal-maintenance&quot;,&#xd;
+            &quot;portal-ams-integration&quot;,&#xd;
+            &quot;portal-dashboard&quot;,&#xd;
+            &quot;cihms-portal-dashboard&quot;,&#xd;
+            &quot;portal-fault-management&quot;,&#xd;
+            &quot;portal-shift-management&quot;,&#xd;
+            &quot;portal-contact&quot;,&#xd;
+            &quot;portal-energy-management&quot;,&#xd;
+            &quot;mobile-portal-house-keeping&quot;,&#xd;
+            &quot;mobile-portal-task-management&quot;,&#xd;
+            &quot;mobile-portal-aux-laundry&quot;,&#xd;
+            &quot;portal-task-management&quot;,&#xd;
+            &quot;mobile-portal-ciams&quot;,&#xd;
+            &quot;portal-system&quot;,&#xd;
+            &quot;mobile-portal-inspection&quot;,&#xd;
+            &quot;portal-aps-smc&quot;,&#xd;
+            &quot;mobile-portal-pcm&quot;,&#xd;
+            &quot;portal-cps&quot;&#xd;
+        ]&#xd;
+    },&#xd;
+    &quot;assetId&quot;: &quot;${assetId}&quot;,&#xd;
+    &quot;functionLocationId&quot;: &quot;bf8d4ea8-6619-41f8-9716-ed1c2da40f7d&quot;,&#xd;
+    &quot;assetEquipmentStatuses&quot;: [&#xd;
+        {&#xd;
+            &quot;__data__&quot;: {&#xd;
+                &quot;equipmentStatusId&quot;: &quot;cfc80363-a225-4303-8da6-62cb4fb4908e&quot;,&#xd;
+                &quot;equipmentStatusName&quot;: &quot;C1&quot;,&#xd;
+                &quot;quantity&quot;: 5,&#xd;
+                &quot;equipmentStatusDetailCode&quot;: &quot;Standby&quot;,&#xd;
+                &quot;assetStatusId&quot;: &quot;b6ace75b-bdbc-476e-8ae8-a2c714e4433a&quot;,&#xd;
+                &quot;assetStatusName&quot;: &quot;Chua su dung&quot;&#xd;
+            },&#xd;
+            &quot;equipmentStatusId&quot;: &quot;cfc80363-a225-4303-8da6-62cb4fb4908e&quot;,&#xd;
+            &quot;equipmentStatusName&quot;: &quot;C1&quot;,&#xd;
+            &quot;quantity&quot;: 2,&#xd;
+            &quot;equipmentStatusDetailCode&quot;: &quot;Standby&quot;,&#xd;
+            &quot;assetStatusId&quot;: &quot;b6ace75b-bdbc-476e-8ae8-a2c714e4433a&quot;,&#xd;
+            &quot;assetStatusName&quot;: &quot;Chua su dung&quot;,&#xd;
+            &quot;allowQuantity&quot;: 5,&#xd;
+            &quot;transformToItems&quot;: []&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;__data__&quot;: {&#xd;
+                &quot;equipmentStatusId&quot;: &quot;38915954-cac8-48f8-8f68-b8b76cd044a0&quot;,&#xd;
+                &quot;equipmentStatusName&quot;: &quot;C2&quot;,&#xd;
+                &quot;quantity&quot;: 5,&#xd;
+                &quot;equipmentStatusDetailCode&quot;: &quot;Offline&quot;,&#xd;
+                &quot;assetStatusId&quot;: &quot;b6ace75b-bdbc-476e-8ae8-a2c714e4433a&quot;,&#xd;
+                &quot;assetStatusName&quot;: &quot;Chua su dung&quot;&#xd;
+            },&#xd;
+            &quot;equipmentStatusId&quot;: &quot;38915954-cac8-48f8-8f68-b8b76cd044a0&quot;,&#xd;
+            &quot;equipmentStatusName&quot;: &quot;C2&quot;,&#xd;
+            &quot;quantity&quot;: 2,&#xd;
+            &quot;equipmentStatusDetailCode&quot;: &quot;Offline&quot;,&#xd;
+            &quot;assetStatusId&quot;: &quot;b6ace75b-bdbc-476e-8ae8-a2c714e4433a&quot;,&#xd;
+            &quot;assetStatusName&quot;: &quot;Chua su dung&quot;,&#xd;
+            &quot;allowQuantity&quot;: 5,&#xd;
+            &quot;transformToItems&quot;: []&#xd;
+        }&#xd;
+    ],&#xd;
+    &quot;checkListTemplateId&quot;: &quot;2cdd3eaf-4ad7-461e-b71c-ce9c29222768&quot;,&#xd;
+    &quot;name&quot;: &quot;DANH MUC CONG VIEC 1&quot;,&#xd;
+    &quot;priorityId&quot;: &quot;df9e70ea-7f01-4d60-b60a-fddb12a1faa9&quot;,&#xd;
+    &quot;orderTypeId&quot;: &quot;3f4cc46f-664d-478e-b89c-c41880822eb8&quot;,&#xd;
+    &quot;workCenterId&quot;: &quot;e8b4df9b-9f9b-4255-814a-f6644ecab9cf&quot;,&#xd;
+    &quot;assetCode&quot;: &quot;${assetCode}&quot;,&#xd;
+    &quot;assetName&quot;: &quot;Tai san ngay ${tenTaiSan}&quot;,&#xd;
+    &quot;dueDate&quot;: &quot;2025-10-31T02:43:06.595Z&quot;,&#xd;
+    &quot;startDate&quot;: &quot;${__time(yyyy/MM/dd HH:mm:ss.SSS&apos;Z&apos;)}&quot;,&#xd;
+    &quot;description&quot;: &quot;Mo ta&quot;,&#xd;
+    &quot;equipmentAssetIdOld&quot;: &quot;${assetId}&quot;,&#xd;
+    &quot;documents&quot;: [],&#xd;
+    &quot;references&quot;: [],&#xd;
+    &quot;statusScopes&quot;: [],&#xd;
+    &quot;userCanEdit&quot;: false,&#xd;
+    &quot;workOrderFault&quot;: {},&#xd;
+    &quot;locationId&quot;: &quot;bf8d4ea8-6619-41f8-9716-ed1c2da40f7d&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">api.stg.hulk.cloudhms.io</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/service-maintenance/maintenance-work-order</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="TestPlan.comments">Created from cURL on 2022-08-11T09:29:21.94</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="work_order_id" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">work_order_id</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;id&quot;:&quot;(.+?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">not found</stringProp>
+            <stringProp name="RegexExtractor.match_number">0</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="04. PUT Sessions" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;code&quot;: &quot;&quot;,&#xd;
+    &quot;name&quot;: &quot;Phien kiem ke ngay ${name}&quot;,&#xd;
+    &quot;propertyId&quot;: &quot;6f2b8e93-d9f9-4c75-9c75-09b157bd254d&quot;,&#xd;
+    &quot;departmentIds&quot;: [&#xd;
+        &quot;e8b4df9b-9f9b-4255-814a-f6644ecab9cf&quot;&#xd;
+    ],&#xd;
+    &quot;description&quot;: &quot;Mo ta&quot;,&#xd;
+    &quot;from&quot;: &quot;2022-08-23T10:07:32.387Z&quot;,&#xd;
+    &quot;to&quot;: &quot;2022-09-30T10:07:32.387Z&quot;,&#xd;
+    &quot;type&quot;: &quot;next&quot;,&#xd;
+    &quot;requestInfo&quot;: {&#xd;
+        &quot;organization&quot;: &quot;vingroup&quot;,&#xd;
+        &quot;languageCode&quot;: &quot;vi&quot;,&#xd;
+        &quot;propertyId&quot;: &quot;6f2b8e93-d9f9-4c75-9c75-09b157bd254d&quot;,&#xd;
+        &quot;pnLId&quot;: &quot;162997fe-9757-4eae-94ba-5df708250a86&quot;,&#xd;
+        &quot;serviceCode&quot;: &quot;portal-ams&quot;,&#xd;
+        &quot;reCaptchaToken&quot;: &quot;+U#c58m9&amp;TY!vwuC75jbyC-EUK?3Z%eW&quot;&#xd;
+    }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">api.stg.hulk.cloudhms.io</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/service-ams/sessions</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="TestPlan.comments">Created from cURL on 2022-08-23T17:20:09.733</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="05. POST material-request" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;requestInfo&quot;: {&#xd;
+        &quot;organization&quot;: &quot;vingroup&quot;,&#xd;
+        &quot;languageCode&quot;: &quot;vi&quot;,&#xd;
+        &quot;propertyId&quot;: &quot;6f2b8e93-d9f9-4c75-9c75-09b157bd254d&quot;,&#xd;
+        &quot;pnLId&quot;: &quot;162997fe-9757-4eae-94ba-5df708250a86&quot;,&#xd;
+        &quot;serviceCode&quot;: &quot;portal-maintenance&quot;,&#xd;
+        &quot;reCaptchaToken&quot;: &quot;${captcha}&quot;&#xd;
+    },&#xd;
+    &quot;workOrderId&quot;: &quot;${work_order_id}&quot;,&#xd;
+    &quot;details&quot;: [&#xd;
+        {&#xd;
+            &quot;materialId&quot;: &quot;d913b308-1b1e-4265-9cb1-1495ae7956ce&quot;,&#xd;
+            &quot;warehouseId&quot;: &quot;6fe274e2-dd62-472e-8443-78b5cb77b221&quot;,&#xd;
+            &quot;requestQuantity&quot;: 10&#xd;
+        }&#xd;
+    ]&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">api.stg.hulk.cloudhms.io</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/service-maintenance/material-request/</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="TestPlan.comments">Created from cURL on 2022-09-22T09:42:09.196</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="work_order_id" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">material_request_id</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;id&quot;:&quot;(.+?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">not found</stringProp>
+            <stringProp name="RegexExtractor.match_number">0</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="06. PUT change-status" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{
+    &quot;requestInfo&quot;: {
+        &quot;organization&quot;: &quot;vingroup&quot;,
+        &quot;languageCode&quot;: &quot;vi&quot;,
+        &quot;propertyId&quot;: &quot;6f2b8e93-d9f9-4c75-9c75-09b157bd254d&quot;,
+        &quot;pnLId&quot;: &quot;162997fe-9757-4eae-94ba-5df708250a86&quot;,
+        &quot;serviceCode&quot;: &quot;portal-maintenance&quot;,
+        &quot;reCaptchaToken&quot;: &quot;+U#c58m9&amp;TY!vwuC75jbyC-EUK?3Z%eW&quot;
+    },
+    &quot;materialRequestId&quot;: &quot;ec3385fb-dd4a-4559-88c1-d9a2026631c4&quot;,
+    &quot;status&quot;: &quot;Approved&quot;,
+    &quot;reason&quot;: &quot;&quot;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">api.stg.hulk.cloudhms.io</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/service-maintenance/material-request/change-status</stringProp>
+          <stringProp name="HTTPSampler.method">PUT</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="TestPlan.comments">Created from cURL on 2022-09-23T09:33:19.209</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="AMS - Session" enabled="false">
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration">900</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="name" elementType="Argument">
+              <stringProp name="Argument.name">name</stringProp>
+              <stringProp name="Argument.value">${__time(ddMMyyyy)}_${__Random(00000,99990)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="captcha" elementType="Argument">
+              <stringProp name="Argument.name">captcha</stringProp>
+              <stringProp name="Argument.value">+U#c58m9&amp;TY!vwuC75jbyC-EUK?3Z%eW</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="authority" elementType="Header">
+              <stringProp name="Header.name">authority</stringProp>
+              <stringProp name="Header.value">api.stg.hulk.cloudhms.io</stringProp>
+            </elementProp>
+            <elementProp name="accept" elementType="Header">
+              <stringProp name="Header.name">accept</stringProp>
+              <stringProp name="Header.value">application/json</stringProp>
+            </elementProp>
+            <elementProp name="accept-language" elementType="Header">
+              <stringProp name="Header.name">accept-language</stringProp>
+              <stringProp name="Header.value">en,ja;q=0.9,fr;q=0.8,zh;q=0.7,vi;q=0.6</stringProp>
+            </elementProp>
+            <elementProp name="authorization" elementType="Header">
+              <stringProp name="Header.name">authorization</stringProp>
+              <stringProp name="Header.value">Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkQ3MzU5QzcwMjA0QTlGNTgzOEE4RkYzRDBDQUVFQjIzRTZGMTIxNzZSUzI1NiIsInR5cCI6ImF0K2p3dCIsIng1dCI6IjF6V2NjQ0JLbjFnNHFQODlESzdySS1ieElYWSJ9.eyJuYmYiOjE2NjM4ODc1NjYsImV4cCI6MTY2MzkxNjM2NiwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5zdGcuaHVsay5jbG91ZGhtcy5pbyIsImF1ZCI6WyJ0ZXN0LWFwaSIsInJlc291cmNlLWFwaS1hcHMiLCJyZXNvdXJjZS1hcGktYW1zIiwicmVzb3VyY2UtYXBpLXBtcyJdLCJjbGllbnRfaWQiOiJzcGEtY2xpZW50Iiwic3ViIjoiMjZiZDYxN2EtNjViYi00ODBjLWJkMDktZjg4YzgwZDMzMjEwIiwiYXV0aF90aW1lIjoxNjYzODg3NTYwLCJpZHAiOiJsb2NhbCIsInVzZXJuYW1lIjoibmd1eWVudnUwMSIsIm5hbWUiOiJOZ3V5ZW4gVnUgMDEiLCJlbWFpbCI6Im5ndXllbnZ1MDFAeW9wbWFpbC5jb20iLCJwaG9uZV9udW1iZXIiOiIxMjM0NTY3ODk5IiwicHJvZmlsZWlkIjoiMTAzNmRhZmEtNWQwYy00YzM0LTlmNzQtMDVlYTk5MDE2NGM3IiwicHJvZmlsZV90eXBlIjoiVXNlciIsImlzX3Jvb3RfYWRtaW4iOiJmYWxzZSIsIm9yZ2FuaXphdGlvbiI6InZpbmdyb3VwIiwiYXBwbGljYXRpb25zIjpbIm1vYmlsZS1wb3J0YWwtZnJvbnQtb2ZmaWNlIiwiY2lobXMtcG9ydGFsLWNycyIsImNpaG1zLXBvcnRhbC1hdXgtbWFpbnRlbmFuY2UiLCJwb3J0YWwtYW1zIiwicG9ydGFsLW1haW50ZW5hbmNlIiwicG9ydGFsLWFtcy1pbnRlZ3JhdGlvbiIsInBvcnRhbC1kYXNoYm9hcmQiLCJjaWhtcy1wb3J0YWwtZGFzaGJvYXJkIiwiY2lobXMtcG9ydGFsLWF1eC1sYXVuZHJ5IiwicG9ydGFsLWZhdWx0LW1hbmFnZW1lbnQiLCJwb3J0YWwtc2hpZnQtbWFuYWdlbWVudCIsInBvcnRhbC1jb250YWN0IiwicG9ydGFsLWVuZXJneS1tYW5hZ2VtZW50IiwibW9iaWxlLXBvcnRhbC1ob3VzZS1rZWVwaW5nIiwiY2lobXMtcG9ydGFsLWZyb250LW9mZmljZSIsImNpaG1zLXBvcnRhbC1ob3VzZS1rZWVwaW5nIiwibW9iaWxlLXBvcnRhbC10YXNrLW1hbmFnZW1lbnQiLCJtb2JpbGUtcG9ydGFsLWF1eC1sYXVuZHJ5IiwicG9ydGFsLXRhc2stbWFuYWdlbWVudCIsIm1vYmlsZS1wb3J0YWwtY2lhbXMiLCJwb3J0YWwtY2lhbXMiLCJwb3J0YWwtc3lzdGVtIiwibW9iaWxlLXBvcnRhbC1pbnNwZWN0aW9uIiwicG9ydGFsLWFwcy1zbWMiLCJtb2JpbGUtcG9ydGFsLXBjbSIsImNpaG1zLXBvcnRhbC10YXNrLW1hbmFnZW1lbnQiLCJwb3J0YWwtY3BzIl0sInNpZCI6IjZEREIzRDkzRDk4ODNERkVDQjFFRTkxNjUxREExREY1IiwiaWF0IjoxNjYzODg3NTY2LCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIG9mZmxpbmVfYWNjZXNzIiwiYW1yIjpbInB3ZCJdfQ.VCW9H-jYCXDVOmH31ouhDm-Ybf_6njAsYhWwjBVskxNVUB17XpMM3gvjOCb5zQ2fk-XCzWPQ9P84Epi8OkS65Mz6vFAe4g6_2pWv3Uy1sc_X1PnCGcCMyK7msl_KVysnHVCPZ_TnYO4LoNuSfldNWH9B4qX0mh_Sf8FAcIMgHBpDGB_ajDU9dzeeMRCKTwfkHPzQRNQm84GuWb69YIUrd6YACEkCk75jQe9aL2tgsm9EUl5RLpcQOV9IE2YJXuh3QlKf-0ahk6irXt9WXD4MhHCu2qVJZP-aU2dMQ3F3RrEVMWjIv8diH_tQXQCnTqDahOmpbvyj0z6BfYf53J8VmQ</stringProp>
+            </elementProp>
+            <elementProp name="content-type" elementType="Header">
+              <stringProp name="Header.name">content-type</stringProp>
+              <stringProp name="Header.value">application/json</stringProp>
+            </elementProp>
+            <elementProp name="origin" elementType="Header">
+              <stringProp name="Header.name">origin</stringProp>
+              <stringProp name="Header.value">https://vingroup.portal.stg.hulk.cloudhms.io</stringProp>
+            </elementProp>
+            <elementProp name="referer" elementType="Header">
+              <stringProp name="Header.name">referer</stringProp>
+              <stringProp name="Header.value">https://vingroup.portal.stg.hulk.cloudhms.io/</stringProp>
+            </elementProp>
+            <elementProp name="sec-ch-ua" elementType="Header">
+              <stringProp name="Header.name">sec-ch-ua</stringProp>
+              <stringProp name="Header.value">&quot;.Not/A)Brand&quot;;v=&quot;99&quot;, &quot;Google Chrome&quot;;v=&quot;103&quot;, &quot;Chromium&quot;;v=&quot;103&quot;</stringProp>
+            </elementProp>
+            <elementProp name="sec-ch-ua-mobile" elementType="Header">
+              <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+              <stringProp name="Header.value">?0</stringProp>
+            </elementProp>
+            <elementProp name="sec-ch-ua-platform" elementType="Header">
+              <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+              <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+            </elementProp>
+            <elementProp name="sec-fetch-dest" elementType="Header">
+              <stringProp name="Header.name">sec-fetch-dest</stringProp>
+              <stringProp name="Header.value">empty</stringProp>
+            </elementProp>
+            <elementProp name="sec-fetch-mode" elementType="Header">
+              <stringProp name="Header.name">sec-fetch-mode</stringProp>
+              <stringProp name="Header.value">cors</stringProp>
+            </elementProp>
+            <elementProp name="sec-fetch-site" elementType="Header">
+              <stringProp name="Header.name">sec-fetch-site</stringProp>
+              <stringProp name="Header.value">same-site</stringProp>
+            </elementProp>
+            <elementProp name="user-agent" elementType="Header">
+              <stringProp name="Header.name">user-agent</stringProp>
+              <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36</stringProp>
+            </elementProp>
+            <elementProp name="x-organization" elementType="Header">
+              <stringProp name="Header.name">x-organization</stringProp>
+              <stringProp name="Header.value">vingroup</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="01. POST create asset" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;name&quot;: &quot;Tai san ngay ${name}&quot;,&#xd;
+    &quot;description&quot;: &quot;Mo ta tai san jmeter&quot;,&#xd;
+    &quot;assetCategoryId&quot;: &quot;c0001879-20b3-4c4e-b814-2e35041a67a4&quot;,&#xd;
+    &quot;depreciationStatus&quot;: &quot;Draft&quot;,&#xd;
+    &quot;functionalLocationId&quot;: &quot;bf8d4ea8-6619-41f8-9716-ed1c2da40f7d&quot;,&#xd;
+    &quot;quantity&quot;: 10,&#xd;
+    &quot;unitCode&quot;: &quot;c9700d78-438e-4eba-81d5-2488a1d86c72&quot;,&#xd;
+    &quot;isLabelling&quot;: true,&#xd;
+    &quot;isInventoryCheck&quot;: true,&#xd;
+    &quot;isEquipment&quot;: false,&#xd;
+    &quot;companyId&quot;: &quot;d1e4102a-9ca2-40bb-ae19-5ee2353dc7d5&quot;,&#xd;
+    &quot;currency&quot;: &quot;VND&quot;,&#xd;
+    &quot;unitCost&quot;: 1000,&#xd;
+    &quot;costCenterId&quot;: &quot;0c187712-ff65-4df7-bcce-689e794f888f&quot;,&#xd;
+    &quot;evaluationGroup1Id&quot;: &quot;51d55384-a411-4b79-b64d-47874ea2d5e0&quot;,&#xd;
+    &quot;evaluationGroup2Id&quot;: &quot;eca66bba-e85c-4069-ba5d-1ec71dbb5de2&quot;,&#xd;
+    &quot;evaluationGroup3Id&quot;: &quot;b677bba5-be55-4104-958f-b30c0b07e57c&quot;,&#xd;
+    &quot;evaluationGroup4Id&quot;: &quot;0ab5bcad-3091-4036-9ca6-9313279d195c&quot;,&#xd;
+    &quot;evaluationGroup5Id&quot;: &quot;f26cfe6c-11d4-403e-aec2-120ec08106cc&quot;,&#xd;
+    &quot;assetSapIntegration&quot;: &quot;NoSyncSap&quot;,&#xd;
+    &quot;attributes&quot;: [],&#xd;
+    &quot;attachments&quot;: [],&#xd;
+    &quot;assetType&quot;: &quot;Asset&quot;,&#xd;
+    &quot;equipmentStatuses&quot;: [&#xd;
+        {&#xd;
+            &quot;__data__&quot;: {},&#xd;
+            &quot;assetEquipmentStatusDetailCode&quot;: &quot;Standby&quot;,&#xd;
+            &quot;equipmentStatusId&quot;: &quot;cfc80363-a225-4303-8da6-62cb4fb4908e&quot;,&#xd;
+            &quot;equipmentStatusName&quot;: &quot;C1&quot;,&#xd;
+            &quot;quantity&quot;: 5,&#xd;
+            &quot;assetStatusId&quot;: &quot;b6ace75b-bdbc-476e-8ae8-a2c714e4433a&quot;,&#xd;
+            &quot;documents&quot;: []&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;__data__&quot;: {},&#xd;
+            &quot;assetEquipmentStatusDetailCode&quot;: &quot;Offline&quot;,&#xd;
+            &quot;equipmentStatusId&quot;: &quot;38915954-cac8-48f8-8f68-b8b76cd044a0&quot;,&#xd;
+            &quot;equipmentStatusName&quot;: &quot;C2&quot;,&#xd;
+            &quot;quantity&quot;: 5,&#xd;
+            &quot;assetStatusId&quot;: &quot;b6ace75b-bdbc-476e-8ae8-a2c714e4433a&quot;,&#xd;
+            &quot;documents&quot;: []&#xd;
+        }&#xd;
+    ],&#xd;
+    &quot;requestInfo&quot;: {&#xd;
+        &quot;organization&quot;: &quot;vingroup&quot;,&#xd;
+        &quot;languageCode&quot;: &quot;vi&quot;,&#xd;
+        &quot;propertyId&quot;: &quot;6f2b8e93-d9f9-4c75-9c75-09b157bd254d&quot;,&#xd;
+        &quot;pnLId&quot;: &quot;162997fe-9757-4eae-94ba-5df708250a86&quot;,&#xd;
+        &quot;serviceCode&quot;: &quot;portal-ams&quot;,&#xd;
+        &quot;reCaptchaToken&quot;: &quot;+U#c58m9&amp;TY!vwuC75jbyC-EUK?3Z%eW&quot;&#xd;
+    }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">api.stg.hulk.cloudhms.io</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/service-ams/asset</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="assetCode" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">assetCode</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;code&quot;:&quot;(.+?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">not found</stringProp>
+            <stringProp name="RegexExtractor.match_number">0</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="assetId" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">assetId</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;id&quot;:&quot;(.+?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">not found</stringProp>
+            <stringProp name="RegexExtractor.match_number">0</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="02. POST create asset with sap" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;name&quot;: &quot;Tai san sap ngay ${name}&quot;,&#xd;
+    &quot;description&quot;: &quot;Mo ta&quot;,&#xd;
+    &quot;assetCategoryId&quot;: &quot;160fe412-7c8c-4245-8b65-2f7d3f199bd9&quot;,&#xd;
+    &quot;depreciationStatus&quot;: &quot;Draft&quot;,&#xd;
+    &quot;functionalLocationId&quot;: &quot;bf8d4ea8-6619-41f8-9716-ed1c2da40f7d&quot;,&#xd;
+    &quot;quantity&quot;: 0,&#xd;
+    &quot;unitCode&quot;: &quot;c9700d78-438e-4eba-81d5-2488a1d86c72&quot;,&#xd;
+    &quot;isLabelling&quot;: true,&#xd;
+    &quot;isInventoryCheck&quot;: true,&#xd;
+    &quot;isEquipment&quot;: false,&#xd;
+    &quot;companyId&quot;: &quot;d1e4102a-9ca2-40bb-ae19-5ee2353dc7d5&quot;,&#xd;
+    &quot;currency&quot;: &quot;VND&quot;,&#xd;
+    &quot;unitCost&quot;: 0,&#xd;
+    &quot;costCenterId&quot;: &quot;1456abb6-316e-41ce-bc02-068ef01cd680&quot;,&#xd;
+    &quot;evaluationGroup1Id&quot;: &quot;51d55384-a411-4b79-b64d-47874ea2d5e0&quot;,&#xd;
+    &quot;evaluationGroup2Id&quot;: &quot;eb52609c-e06b-4c1b-8266-6f70620dc400&quot;,&#xd;
+    &quot;evaluationGroup3Id&quot;: &quot;2e76c11e-83e9-4e5d-80f7-c469f45a5239&quot;,&#xd;
+    &quot;evaluationGroup4Id&quot;: &quot;ed48c033-e096-4729-84fd-95df5642f3c1&quot;,&#xd;
+    &quot;evaluationGroup5Id&quot;: &quot;a170d427-3143-4059-9270-ae470b4bfbe1&quot;,&#xd;
+    &quot;assetClassId&quot;: &quot;67225bda-592d-499b-9277-f6e4bc5eef3c&quot;,&#xd;
+    &quot;assetSapIntegration&quot;: &quot;SyncValueAndQuantity&quot;,&#xd;
+    &quot;attributes&quot;: [],&#xd;
+    &quot;attachments&quot;: [],&#xd;
+    &quot;assetType&quot;: &quot;Asset&quot;,&#xd;
+    &quot;equipmentStatuses&quot;: [],&#xd;
+    &quot;siteId&quot;: &quot;2f3ab61f-c3b6-49c9-ace4-da9493b7a050&quot;,&#xd;
+    &quot;fundsCenterId&quot;: &quot;565cd2ac-8788-42d1-8fa7-cec62595c7e9&quot;,&#xd;
+    &quot;profitCenterId&quot;: &quot;efc34f00-5fae-4d76-9112-83038aea0c46&quot;,&#xd;
+    &quot;requestInfo&quot;: {&#xd;
+        &quot;organization&quot;: &quot;vingroup&quot;,&#xd;
+        &quot;languageCode&quot;: &quot;vi&quot;,&#xd;
+        &quot;propertyId&quot;: &quot;6f2b8e93-d9f9-4c75-9c75-09b157bd254d&quot;,&#xd;
+        &quot;pnLId&quot;: &quot;162997fe-9757-4eae-94ba-5df708250a86&quot;,&#xd;
+        &quot;serviceCode&quot;: &quot;portal-ams&quot;,&#xd;
+        &quot;reCaptchaToken&quot;: &quot;+U#c58m9&amp;TY!vwuC75jbyC-EUK?3Z%eW&quot;&#xd;
+    }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">api.stg.hulk.cloudhms.io</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/service-ams/asset</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="04. PUT Sessions" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;code&quot;: &quot;&quot;,&#xd;
+    &quot;name&quot;: &quot;Phien kiem ke ngay ${name}&quot;,&#xd;
+    &quot;propertyId&quot;: &quot;6f2b8e93-d9f9-4c75-9c75-09b157bd254d&quot;,&#xd;
+    &quot;departmentIds&quot;: [&#xd;
+        &quot;e8b4df9b-9f9b-4255-814a-f6644ecab9cf&quot;&#xd;
+    ],&#xd;
+    &quot;description&quot;: &quot;Mo ta&quot;,&#xd;
+    &quot;from&quot;: &quot;2022-08-23T10:07:32.387Z&quot;,&#xd;
+    &quot;to&quot;: &quot;2022-09-30T10:07:32.387Z&quot;,&#xd;
+    &quot;type&quot;: &quot;next&quot;,&#xd;
+    &quot;requestInfo&quot;: {&#xd;
+        &quot;organization&quot;: &quot;vingroup&quot;,&#xd;
+        &quot;languageCode&quot;: &quot;vi&quot;,&#xd;
+        &quot;propertyId&quot;: &quot;6f2b8e93-d9f9-4c75-9c75-09b157bd254d&quot;,&#xd;
+        &quot;pnLId&quot;: &quot;162997fe-9757-4eae-94ba-5df708250a86&quot;,&#xd;
+        &quot;serviceCode&quot;: &quot;portal-ams&quot;,&#xd;
+        &quot;reCaptchaToken&quot;: &quot;+U#c58m9&amp;TY!vwuC75jbyC-EUK?3Z%eW&quot;&#xd;
+    }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">api.stg.hulk.cloudhms.io</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/service-ams/sessions</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="TestPlan.comments">Created from cURL on 2022-08-23T17:20:09.733</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

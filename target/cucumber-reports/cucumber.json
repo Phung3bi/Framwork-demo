@@ -1,0 +1,91 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2023-10-07T09:45:18.844Z",
+        "before": [
+          {
+            "result": {
+              "duration": 5289715833,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.beforeScenario()"
+            }
+          }
+        ],
+        "line": 4,
+        "name": "Navigate to home page",
+        "description": "",
+        "id": "home-feature;navigate-to-home-page",
+        "after": [
+          {
+            "result": {
+              "duration": 15659417,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.afterScenario(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 7087175333,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I Open \"Home\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Home\"",
+                  "offset": 7
+                }
+              ],
+              "location": "HomeSteps.iOpenPage(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.Error: Expected condition failed: waiting for core.Keyword$$Lambda$377/0x00000008003c2040@ab4aa5e (tried for 45 second(s) with 500 milliseconds interval)\n\tat core.Keyword.waitForLoadPage(Keyword.java:557)\n\tat steps.demoqa.HomeSteps.ClickToModule(HomeSteps.java:32)\n\tat ✽.I click to button by contains text \"ELEMENT\"(file:src/test/java/features/demoqa/Home.feature:6)\n",
+              "duration": 94046035458,
+              "status": "failed"
+            },
+            "line": 6,
+            "name": "I click to button by contains text \"ELEMENT\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"ELEMENT\"",
+                  "offset": 35
+                }
+              ],
+              "location": "HomeSteps.ClickToModule(String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@AUTO-001"
+          },
+          {
+            "name": "@home"
+          }
+        ]
+      }
+    ],
+    "name": "HOME FEATURE",
+    "description": "",
+    "id": "home-feature",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/features/demoqa/Home.feature",
+    "tags": []
+  }
+]

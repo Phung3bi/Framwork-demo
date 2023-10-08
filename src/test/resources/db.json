@@ -1,0 +1,69 @@
+{
+  "beta": {
+    "cihms": {
+      "info": {
+        "type": "mysql",
+        "host": "jdbc:mysql://shared.db.beta.cloudhms.io",
+        "port": "3306",
+        "username": "product-beta",
+        "password": "mx2df.BrSMDCFIm239fGwJ+Z3Tz"
+      },
+      "commands": {
+        "command01": "",
+        "command02": ""
+      }
+    }
+  },
+  "prod": {
+    "cihms": {
+      "info": {
+        "team-1": {
+          "type": "mysql",
+          "host": "jdbc:mysql://team-1-reader.db.internal.cihms.com",
+          "port": "3306",
+          "username": "vtulh2",
+          "password": "mUR4a6F9YPKPAIDxjClx1fpx0fHt6A9A"
+        },
+        "team-2": {
+          "type": "mysql",
+          "host": "jdbc:mysql://team-2-reader.db.internal.cihms.com",
+          "port": "3306",
+          "username": "vtulh2",
+          "password": "mUR4a6F9YPKPAIDxjClx1fpx0fHt6A9A"
+        },
+        "team-3": {
+          "type": "mysql",
+          "host": "jdbc:mysql://team-3-reader.db.internal.cihms.com",
+          "port": "3306",
+          "username": "vtulh2",
+          "password": "mUR4a6F9YPKPAIDxjClx1fpx0fHt6A9A"
+        },
+        "team-4": {
+          "type": "mysql",
+          "host": "jdbc:mysql://team-4-reader.db.internal.cihms.com",
+          "port": "3306",
+          "username": "vtulh2",
+          "password": "mUR4a6F9YPKPAIDxjClx1fpx0fHt6A9A"
+        },
+        "team-5": {
+          "type": "mysql",
+          "host": "jdbc:mysql://team-5-reader.db.internal.cihms.com",
+          "port": "3306",
+          "username": "vtulh2",
+          "password": "mUR4a6F9YPKPAIDxjClx1fpx0fHt6A9A"
+        },
+        "team-6": {
+          "type": "mysql",
+          "host": "jdbc:mysql://team-6-reader.db.internal.cihms.com",
+          "port": "3306",
+          "username": "vtulh2",
+          "password": "mUR4a6F9YPKPAIDxjClx1fpx0fHt6A9A"
+        }
+      },
+      "commands": {
+        "command01": "",
+        "command02": ""
+      }
+    }
+  }
+}
